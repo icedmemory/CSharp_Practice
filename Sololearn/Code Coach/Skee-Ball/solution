@@ -1,0 +1,26 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SoloLearn
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int scores = Convert.ToInt32(Console.ReadLine());
+            int gunTickets = Convert.ToInt32(Console.ReadLine());
+            
+            if (scores / 12 < gunTickets)
+            {
+                Console.WriteLine("Try again");
+            }  
+            else
+            {
+                Console.WriteLine("Buy it!");
+            }
+        }
+    }
+} 
