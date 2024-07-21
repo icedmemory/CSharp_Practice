@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SoloLearn
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string food = Console.ReadLine();
+
+            string[] finalOrder = food.Split(" ");
+            
+            double foodPrice = 0;
+            
+            foreach (string fo in finalOrder) 
+            {
+                switch (fo) 
+                {
+                    case "Nachos": 
+                    case "Pizza":
+                    foodPrice += 6;
+                    break;
+                    case "Cheeseburger":
+                    foodPrice += 10;
+                    break;
+                    case "Water":
+                    foodPrice += 4;
+                    break;
+                    case "Coke":
+                    default:
+                    foodPrice += 5;
+                    break;
+                }
+            }
+            foodPrice *= 1.07;
+            Console.WriteLine(foodPrice);
+        }
+    }
+}
