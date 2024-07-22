@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SoloLearn
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int craftsSold = Convert.ToInt32(Console.ReadLine());
+
+            int craftPrice = 3000000;
+            int cost = 21000000;
+            
+            if (craftsSold * craftPrice > cost)
+            {
+                Console.Write("Profit");
+            }
+            else if (craftsSold * craftPrice == cost)
+            {
+                Console.Write("Broke Even");
+            }
+            else    
+            {
+                Console.Write("Loss");
+            }     
+        }
+    }
+}
