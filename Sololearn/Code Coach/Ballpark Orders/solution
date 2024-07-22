@@ -10,9 +10,7 @@ namespace SoloLearn
     {
         static void Main(string[] args)
         {
-            string food = Console.ReadLine();
-
-            string[] finalOrder = food.Split(" ");
+            string[] finalOrder = Console.ReadLine().Split(" ");
             
             double foodPrice = 0;
             
@@ -37,7 +35,7 @@ namespace SoloLearn
                 }
             }
             foodPrice *= 1.07;
-            Console.WriteLine(foodPrice);
+            Console.Write(foodPrice);
         }
     }
 }
