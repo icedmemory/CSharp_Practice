@@ -1,0 +1,24 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SoloLearn
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int scopesBought = Convert.ToInt32(Console.ReadLine());
+            
+            double totalPrice = scopesBought * 5 * 1.07;
+            
+            if (scopesBought >= 2)
+            {
+                totalPrice *= 0.9;
+            }
+            Console.WriteLine(Math.Round(totalPrice, 2, MidpointRounding.AwayFromZero));
+        }
+    }
+} 
