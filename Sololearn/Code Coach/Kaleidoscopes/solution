@@ -18,7 +18,7 @@ namespace SoloLearn
             {
                 totalPrice *= 0.9;
             }
-            Console.WriteLine(Math.Round(totalPrice, 2, MidpointRounding.AwayFromZero));
+            Console.Write(Math.Round(totalPrice, 2, MidpointRounding.AwayFromZero));
         }
     }
 } 
