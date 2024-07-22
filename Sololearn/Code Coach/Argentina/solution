@@ -1,0 +1,26 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SoloLearn
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int priceInPesos = Convert.ToInt32(Console.ReadLine()); 
+            int priceInDollars = Convert.ToInt32(Console.ReadLine());
+            
+            if (priceInPesos / 50 < priceInDollars)
+            {
+                Console.Write("Pesos");
+            }
+            else
+            {    
+                Console.Write("Dollars");
+            }
+        }
+    }
+}
