@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SoloLearn
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] sounds = Console.ReadLine().Split(" ");
+            
+            foreach (string sound in sounds) 
+            {
+                switch (sound)
+                {
+                    case "Grr": 
+                    Console.Write("Lion ");
+                    break;
+                    case "Rawr": 
+                    Console.Write("Tiger ");
+                    break;
+                    case "Ssss": 
+                    Console.Write("Snake ");
+                    break;
+                    case "Chirp": 
+                    Console.Write("Bird ");
+                    break;
+                }
+            }
+        }
+    }
+}
