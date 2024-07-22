@@ -10,7 +10,7 @@ namespace SoloLearn
     {
         static void Main(string[] args)
         {
-            int scores = Convert.ToInt32(Console.ReadLine()), 
+            int scores = Convert.ToInt32(Console.ReadLine());
             int gunTickets = Convert.ToInt32(Console.ReadLine());
             
             if (scores / 12 < gunTickets)
