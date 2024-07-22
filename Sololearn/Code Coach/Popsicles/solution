@@ -16,11 +16,11 @@ namespace SoloLearn
             
             if (popsicles % siblings == 0)
             {
-                Console.WriteLine("give away");
+                Console.Write("give away");
             }
             else
             {   
-                Console.WriteLine("eat them yourself");
+                Console.Write("eat them yourself");
             }
         }
     }
