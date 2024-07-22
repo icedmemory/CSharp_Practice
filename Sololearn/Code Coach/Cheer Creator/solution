@@ -14,7 +14,7 @@ namespace SoloLearn
             
             if (yardsMoved > 10)
             {
-                Console.WriteLine("High Five");
+                Console.Write("High Five");
             }
             else if (yardsMoved <= 10 && yardsMoved >= 1)
             {
@@ -25,7 +25,7 @@ namespace SoloLearn
             }
             else
             {    
-                Console.WriteLine("shh");
+                Console.Write("shh");
             }
         }
     }
