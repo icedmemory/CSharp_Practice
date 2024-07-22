@@ -16,7 +16,7 @@ namespace SoloLearn
             int apples = fruit / 2;
             int pies = apples / 3;
             
-            Console.WriteLine(pies);
+            Console.Write(pies);
         }
     }
 }
