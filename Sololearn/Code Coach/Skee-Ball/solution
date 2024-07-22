@@ -15,11 +15,11 @@ namespace SoloLearn
             
             if (scores / 12 < gunTickets)
             {
-                Console.WriteLine("Try again");
+                Console.Write("Try again");
             }
             else    
             {
-                Console.WriteLine("Buy it!");
+                Console.Write("Buy it!");
             }
         }
     }
