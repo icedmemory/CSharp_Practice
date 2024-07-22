@@ -1,0 +1,31 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SoloLearn
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] heightWidthA = Console.ReadLine().Split(","); 
+            string[] heightWidthB = Console.ReadLine().Split(",");
+            
+            int heightA = Convert.ToInt32(heightWidthA[0]);
+            int widthA = Convert.ToInt32(heightWidthA[1]);
+            int heightB = Convert.ToInt32(heightWidthB[0]);
+            int widthB = Convert.ToInt32(heightWidthB[1]);
+            
+            if (heightA * widthA > heightB * widthB)
+            {
+                Console.Write("Apartment A");
+            }
+            else 
+            {
+                Console.WriteLine("Apartment B");
+            }
+        }
+    }
+}
