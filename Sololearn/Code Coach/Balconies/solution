@@ -24,7 +24,7 @@ namespace SoloLearn
             }
             else 
             {
-                Console.WriteLine("Apartment B");
+                Console.Write("Apartment B");
             }
         }
     }
