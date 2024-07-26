@@ -8,7 +8,7 @@ Two integer values that represent the length and width of your front yard.
 <h3>Output Format</h3>
 An integer that represents the total number of flamingos that you should purchase.
 <h3>Sample Input</h3>
-10 10
+10<br> 10
 <h3>Sample Output</h3>
 20
 <h3>Explanation</h3>
