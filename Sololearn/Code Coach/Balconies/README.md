@@ -8,7 +8,7 @@ Your inputs are two strings where the measurements for height and width are sepa
 <h3>Output Format</h3>
 A string that says whether apartment A or apartment B has a larger balcony.
 <h3>Sample Input</h3>
-5,5
+5,5<br>
 2,10
 <h3>Sample Output</h3>
 Apartment A
