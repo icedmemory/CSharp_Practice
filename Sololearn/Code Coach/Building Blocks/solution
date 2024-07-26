@@ -1,0 +1,31 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SoloLearn
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] total = new int[4];
+            for (int i = 0; i < 4; i++)
+            {
+                total[i] = Convert.ToInt32(Console.ReadLine());
+            }
+
+            int blocksLeft = 0;
+
+            foreach (int t in total)
+            {
+                if (t % 15 != 0)
+                {
+                    blocksLeft += t % 15;
+                }
+            }
+            Console.Write(blocksLeft);
+        }
+    }
+}
