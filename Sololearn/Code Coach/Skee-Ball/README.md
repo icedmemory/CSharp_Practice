@@ -8,7 +8,7 @@ The first input is an integer value that represents the points that you scored p
 <h3>Output Format</h3>
 A string that say 'Buy it!' if you will have enough tickets, or a string that says 'Try again' if you will not.
 <h3>Sample Input</h3>
-500
+500<br>
 40
 <h3>Sample Output</h3>
 Buy it!
