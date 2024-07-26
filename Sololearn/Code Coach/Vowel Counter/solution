@@ -1,0 +1,26 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SoloLearn
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            char[] alphabets = Console.ReadLine().ToLower().ToCharArray();
+
+            int vowelCount = 0;
+            foreach (char alphabet in alphabets)
+            {
+                if (alphabet == 'a' || alphabet == 'e' || alphabet == 'i' || alphabet == 'o' || alphabet == 'u')
+                {
+                    vowelCount++;
+                }
+            }
+            Console.Write(vowelCount);
+        }
+    }
+} 
