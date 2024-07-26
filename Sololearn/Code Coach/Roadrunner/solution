@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SoloLearn
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int distanceFromSafety = Convert.ToInt32(Console.ReadLine()); 
+            int runnerSpeed = Convert.ToInt32(Console.ReadLine()); 
+            int coyoteSpeed = Convert.ToInt32(Console.ReadLine());
+            
+            if (distanceFromSafety / runnerSpeed < (distanceFromSafety + 50) / coyoteSpeed)
+            {
+                Console.Write("Meep Meep");
+            }
+            else
+            {    
+                Console.WriteLine("Yum");
+            }
+        }
+    }
+} 
