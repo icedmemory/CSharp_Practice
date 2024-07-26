@@ -1,0 +1,28 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SoloLearn
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int carrotsForPack = Convert.ToInt32(Console.ReadLine()); 
+            int boxes = Convert.ToInt32(Console.ReadLine()); 
+
+            int carrotsLeft = carrotsForPack % boxes;
+            
+            if (carrotsLeft >= 7)
+            {
+                Console.Write("Cake Time");
+            }
+            else    
+            {    
+                Console.Write($"I need to buy {7 - carrotsLeft} more");
+            }
+        }
+    }
+}
