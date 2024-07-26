@@ -1,0 +1,45 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SoloLearn
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int dividend = Convert.ToInt32(Console.ReadLine());
+
+            string[] inputs = Console.ReadLine().Split(" ");
+
+            int iL = inputs.Length;
+            int[] divisors = new int[iL];
+            for (int i = 0; i < iL; i++)
+            {
+                divisors[i] = Convert.ToInt32(inputs[i]);
+            }
+
+            int[] remainders = new int[iL];
+            int remainders_count = 0;
+            for (int j = 0; j < iL; j++)
+            {
+                remainders[j] = dividend % divisors[j];
+
+                if (remainders[j] == 0)
+                {
+                    remainders_count++;
+                }
+            }
+            if (remainders_count == iL)
+            {
+                Console.Write("divisible by all");
+            }
+            else
+            {
+                Console.Write("not divisible by all");
+            }
+        }
+    }
+} 
