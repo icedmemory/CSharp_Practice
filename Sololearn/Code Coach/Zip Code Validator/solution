@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SoloLearn
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+           string zipCode = Console.ReadLine();
+
+           int number = 0;
+           bool valid = int.TryParse(zipCode, out number);
+
+           if (valid)
+           {
+               if (zipCode.Count() == 5)
+               {
+                   Console.Write("true");
+               }
+               else
+               {
+                   Console.Write("false");
+               }
+           }
+           else
+           {
+               Console.Write("false");
+           }
+        }
+    }
+} 
