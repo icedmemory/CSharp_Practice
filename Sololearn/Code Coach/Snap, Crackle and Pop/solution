@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SoloLearn
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] bowls = new int[6];
+            for (int i = 0; i < 6; i++)
+            {
+                bowls[i] = Convert.ToInt32(Console.ReadLine());
+            }
+
+            foreach (int bowl in bowls)
+            {
+                if (bowl % 3 == 0)
+                {
+                    Console.Write("Pop ");
+                }
+                else if (bowl % 2 != 0)
+                {
+                    Console.Write("Snap ");
+                }
+                else
+                {
+                    Console.Write("Crackle ");
+                }
+            }
+        }
+    }
+} 
