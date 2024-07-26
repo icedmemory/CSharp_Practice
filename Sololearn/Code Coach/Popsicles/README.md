@@ -8,7 +8,7 @@ Two integer values, the first one represents the number of siblings, and the sec
 <h3>Output Format</h3>
 A string that says 'give away' if you are giving them away, or 'eat them yourself' if you will be eating them yourself.
 <h3>Sample Input</h3>
-3 9
+3<br> 9
 <h3>Sample Output</h3>
 give away
 <h3>Explanation</h3>
