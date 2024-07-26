@@ -8,7 +8,7 @@ Two integer values, the first one is the price in Pesos and the second one is th
 <h3>Output Format</h3>
 A string that says which currency you should make the purchase in ('Dollars' or 'Pesos').
 <h3>Sample Input</h3>
-4000
+4000<br>
 100
 <h3>Sample Output</h3>
 Pesos
