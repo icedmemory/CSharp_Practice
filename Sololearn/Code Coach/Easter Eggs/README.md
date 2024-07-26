@@ -8,8 +8,8 @@ Three integer values. The first represents the total number of eggs, the second,
 <h3>Output Format</h3>
 A string that says 'Keep Hunting' if there are still eggs out there or 'Candy Time' if you found all the eggs.
 <h3>Sample Input</h3>
-100
-40
+100<br>
+40<br>
 60
 <h3>Sample Output</h3>
 Candy Time
