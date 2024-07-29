@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SoloLearn
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] itemPrices = Console.ReadLine().Split(" ");
+
+            double[] priceConversion = new double[itemPrices.Length];
+            for (int i = 0; i < itemPrices.Length; i++)
+            {
+                priceConversion[i] = Convert.ToDouble(itemPrices[i])*1.1;
+            }
+
+            int priceOver20 = 0;
+
+            foreach (double pC in priceConversion)
+            {
+                if (pC > 20)
+                {
+                    priceOver20++;
+                }
+            }
+
+            if (priceOver20 > 0)
+            {
+                Console.Write("Back to the store");
+            }
+            else
+            {
+                Console.Write("On to the terminal");
+            }
+        }
+    }
+} 
