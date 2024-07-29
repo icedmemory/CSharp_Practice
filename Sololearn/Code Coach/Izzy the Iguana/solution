@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SoloLearn
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] snacks = Console.ReadLine().Split(" ");
+            
+            int snackPoints = 0;
+            
+            foreach (string snack in snacks) 
+            {
+                switch (snack)
+                {
+                    case "Lettuce":
+                    snackPoints+=5;
+                    break;
+                    case "Carrot":
+                    snackPoints+=4;
+                    break;
+                    case "Mango":
+                    snackPoints+=9;
+                    break;
+                }
+            }
+            
+            if (snackPoints >= 10)
+            {
+                Console.Write("Come on Down!");
+            }
+            else
+            {
+                Console.Write("Time to wait");
+            }
+        }
+    }
+} 
