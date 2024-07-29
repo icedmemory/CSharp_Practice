@@ -15,9 +15,9 @@ namespace SoloLearn
            int number = 0;
            bool valid = int.TryParse(zipCode, out number);
 
-           if (valid)
+           if (zipCode.Length == 5)
            {
-               if (zipCode.Count() == 5)
+               if (valid)
                {
                    Console.Write("true");
                }
