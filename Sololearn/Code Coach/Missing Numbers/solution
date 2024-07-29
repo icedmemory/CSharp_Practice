@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SoloLearn
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int lines = Convert.ToInt32(Console.ReadLine());
+
+            int[] numbers = new int[lines];
+            for (int i = 0; i < lines; i++)
+            {
+                numbers[i] = Convert.ToInt32(Console.ReadLine());
+            }
+
+            int missingNumber = 0; 
+            for (int j = 0; j < numbers.Length - 1; j++)
+            {
+                if (numbers[j]+1 != numbers[j+1])
+                {
+                    for (int k = numbers[j]+1; k < numbers[j+1]; k++)
+                    {
+                        missingNumber = k;
+
+                        Console.Write($"{missingNumber} ");
+                    }
+                }
+            }
+        }
+    }
+} 
