@@ -1,0 +1,24 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SoloLearn
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int houses;
+            houses = Convert.ToInt32(Console.ReadLine());
+
+            double percentage = (2.0 / houses)*100;
+
+            if (houses >= 3)
+            {
+                Console.Write(Math.Ceiling(percentage));
+            }
+        }
+    }
+}
