@@ -1,0 +1,25 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SoloLearn
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            decimal c = Convert.ToDecimal(Console.ReadLine());
+            decimal m = Convert.ToDecimal(Console.ReadLine());
+            decimal y = Convert.ToDecimal(Console.ReadLine());
+            decimal k = Convert.ToDecimal(Console.ReadLine());
+
+            int r = (int)Math.Round(255 * (1-c) * (1-k));
+            int g = (int)Math.Round(255 * (1-m) * (1-k));
+            int b = (int)Math.Round(255 * (1-y) * (1-k));
+
+            Console.Write($"{r},{g},{b}");
+        }
+    }
+}
