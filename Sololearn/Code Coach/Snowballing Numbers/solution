@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SoloLearn
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int lines = Convert.ToInt32(Console.ReadLine());
+
+            int[] numbers = new int[lines];
+            for (int i = 0; i < lines; i++)
+            {
+                numbers[i] = Convert.ToInt32(Console.ReadLine());
+            }
+
+            int numSum = 0;
+            int true_count = 0;
+
+            for (int j = 0; j < numbers.Length - 1; j++)
+            {
+                numSum+=numbers[j];
+
+                if (numbers[j+1] > numSum)
+                {
+                    true_count++;
+                }
+            }
+
+            if (true_count == numbers.Length - 1)
+            {
+                Console.Write("true");
+            }
+            else
+            {
+                Console.Write("false");
+            }
+        }
+    }
+}
