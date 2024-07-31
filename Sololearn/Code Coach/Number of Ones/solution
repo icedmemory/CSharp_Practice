@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SoloLearn
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int number = Convert.ToInt32(Console.ReadLine());
+
+            int closestLog;
+            int remainder;
+            int count_of_ones = 0;
+
+            do
+            {
+                closestLog = (int)Math.Floor(Math.Log(number, 2));
+                remainder = (int)(number - Math.Pow(2, closestLog));
+                number = remainder;
+                count_of_ones++;
+            }
+            while(number > 1);
+
+            if (number % 2 == 0)
+            {
+                Console.Write(count_of_ones);
+            }
+            else
+            {
+                Console.Write(count_of_ones+1);
+            }
+        }
+    }
+} 
