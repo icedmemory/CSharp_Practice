@@ -22,14 +22,7 @@ namespace SoloLearn
                     sameLetters++;
                 }
             }
-            if (sameLetters == 0)
-            {
-                Console.Write("true");
-            }
-            else
-            {
-                Console.Write("false");
-            }
+            Console.Write((sameLetters == 0) ? "true" : "false");
         }
     }
 }
