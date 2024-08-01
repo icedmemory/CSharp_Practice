@@ -30,14 +30,7 @@ namespace SoloLearn
                 }
             }
             
-            if (snackPoints >= 10)
-            {
-                Console.Write("Come on Down!");
-            }
-            else
-            {
-                Console.Write("Time to wait");
-            }
+            Console.Write((snackPoints >= 10) ? "Come on Down!" : "Time to wait");
         }
     }
 } 
