@@ -23,6 +23,7 @@ namespace SoloLearn
                     sameLetters++;
                 }
             }
+            
             Console.Write((sameLetters > 0) ? "Deja Vu" : "Unique");            
         }
     }
