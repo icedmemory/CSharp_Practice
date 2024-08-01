@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SoloLearn
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] otherNames = Console.ReadLine().Split(" ");
+            string myName = Console.ReadLine();
+
+            int sameInitials = 0;
+
+            foreach (string oN in otherNames)
+            {
+                string otherInitials = oN.Substring(0, 1);
+                string myInitial = myName.Substring(0, 1);
+                if (otherInitials == myInitial)
+                {
+                    sameInitials++;
+                }
+            }
+            Console.Write((sameInitials > 0) ? "Compare notes" : "No such luck");
+        }
+    }
+}
