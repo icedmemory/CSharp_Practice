@@ -20,6 +20,7 @@ namespace SoloLearn
                     sameLetters++;
                 }
             }
+            
             Console.Write((sameLetters == 0) ? "true" : "false");
         }
     }
