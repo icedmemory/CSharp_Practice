@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SoloLearn
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string input = Console.ReadLine();
+            int number = Convert.ToInt32(Console.ReadLine());
+
+            int hyphenCount = input.Length / number;
+            int newInputLength = input.Length + hyphenCount;
+            
+            int lastHyphen = input.Length % number;
+
+            for (int i = number; i < newInputLength; i+=(number+1))
+            {
+                input = input.Insert(i, "-");
+            }
+
+            if (lastHyphen == 0)
+            {
+                input = input.Remove(newInputLength - 1);
+            }
+
+            Console.Write(input);
+        }
+    }
+}
