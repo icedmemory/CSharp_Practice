@@ -1,0 +1,53 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SoloLearn
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] rgbValues = new int[3];
+            for (int i = 0; i < 3; i++)
+            {
+                rgbValues[i] = Convert.ToInt32(Console.ReadLine());
+            }
+
+            Console.Write("#"+rgbToHex(rgbValues[0])+rgbToHex(rgbValues[1])+rgbToHex(rgbValues[2]));
+        }
+        static string rgbToHex(int number)
+        {
+            int value1 = number / 16;
+            int value2 = number % 16;
+
+            Dictionary<int, char> letterCode = new Dictionary<int, char>();
+                letterCode[10] = 'a';
+                letterCode[11] = 'b';
+                letterCode[12] = 'c';
+                letterCode[13] = 'd';
+                letterCode[14] = 'e';
+                letterCode[15] = 'f';
+
+            for (int j = 10; j < 16; j++)
+            {
+                if (value1 < 10 && value2 == j)
+                {
+                    return $"{value1}{letterCode[j]}";
+                }
+                else if (value1 == j && value2 < 10)
+                {
+                    return $"{letterCode[j]}{value2}";
+                }
+                else if (value1 == j && value2 == j)
+                {
+                    return $"{letterCode[j]}{letterCode[j]}";
+                }
+            }
+
+            return $"{value1}{value2}";
+        }
+    }
+} 
