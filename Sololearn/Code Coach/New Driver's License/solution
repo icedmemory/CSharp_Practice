@@ -1,0 +1,49 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SoloLearn
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string myName = Console.ReadLine();
+            int agents = Convert.ToInt32(Console.ReadLine());
+            string[] otherNames = Console.ReadLine().Split();
+
+            List<string> peopleInLine = new List<string>();
+                peopleInLine.Add(myName);
+                peopleInLine.Add(otherNames[0]);
+                peopleInLine.Add(otherNames[1]);
+                peopleInLine.Add(otherNames[2]);
+                peopleInLine.Add(otherNames[3]);
+
+            string[] allPeople = peopleInLine.ToArray();
+            Array.Sort(allPeople);
+
+            int myPosition = Array.IndexOf(allPeople, myName);
+            int waitingTime = 20;
+
+            if (agents > 1)
+            {
+                if (myPosition == agents || myPosition - agents == 1)
+                {
+                    waitingTime+=20;
+                }
+                else if (myPosition - agents > 1)
+                {
+                    waitingTime+=20*(myPosition - agents);
+                }
+            }
+            else
+            {
+                waitingTime+=20*myPosition;
+            }
+            
+            Console.Write(waitingTime);
+        }
+    }
+} 
