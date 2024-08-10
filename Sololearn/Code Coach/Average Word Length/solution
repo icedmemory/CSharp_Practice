@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SoloLearn
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string inputs = Console.ReadLine();
+
+            double letterLength = 0;
+
+            for (int i = 0; i < inputs.Length; i++)
+            {
+                if (char.IsLetter(inputs[i]))
+                {
+                    letterLength++;
+                }
+            }
+
+            string[] inputArray = inputs.Split();
+
+            int wordCount = 0;
+            foreach (string iA in inputArray)
+            {
+                wordCount++;
+            }
+
+            double averageLength = letterLength / wordCount;
+            Console.Write(Math.Ceiling(averageLength));
+        }
+    }
+}
