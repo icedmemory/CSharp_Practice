@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SoloLearn
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string input = Console.ReadLine();
+
+            int money = input.IndexOf('$');
+            int thief = input.IndexOf('T');
+
+            int guard = 0;
+            List<int> guardCount = new List<int>();
+            do
+            {
+                guard = input.IndexOf('G', guard+1);
+                guardCount.Add(guard);
+            }
+            while (guard != (-1));
+
+            int[] guardArray = guardCount.ToArray();
+            int securityLevel = 0;
+            foreach (int gA in guardArray)
+            {
+                if (thief < gA && gA < money || money < gA && gA < thief)
+                {
+                    securityLevel++
+                }
+            }
+
+            if (securityLevel > 0)
+            {
+                Console.Write("quiet");
+            }
+            else
+            {
+                Console.Write("ALARM");
+            }
+        }
+    }
+}
