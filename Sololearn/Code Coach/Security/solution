@@ -34,14 +34,7 @@ namespace SoloLearn
                 }
             }
 
-            if (securityLevel > 0)
-            {
-                Console.Write("quiet");
-            }
-            else
-            {
-                Console.Write("ALARM");
-            }
+            Console.Write((securityLevel > 0) ? "quiet" : "ALARM");
         }
     }
 }
