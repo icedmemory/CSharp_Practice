@@ -1,0 +1,23 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SoloLearn
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string date1 = Console.ReadLine();
+            string date2 = Console.ReadLine();
+
+            DateTime older_date = DateTime.Parse(date1);
+            DateTime newer_date = DateTime.Parse(date2);
+
+            TimeSpan interval = newer_date - older_date;
+            Console.Write(interval.Days);
+        }
+    }
+} 
