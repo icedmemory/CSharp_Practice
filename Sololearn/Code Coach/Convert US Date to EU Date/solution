@@ -1,0 +1,20 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SoloLearn
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string US_date = Console.ReadLine();
+
+            DateTime EU_date = DateTime.Parse(US_date);
+
+            Console.Write(EU_date.ToString("d/M/yyyy"));
+        }
+    }
+}
