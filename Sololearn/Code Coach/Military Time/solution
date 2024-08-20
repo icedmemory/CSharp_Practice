@@ -1,0 +1,20 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SoloLearn
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string hr12 = Console.ReadLine();
+            
+            DateTime hr24 = DateTime.Parse(hr12);
+            
+            Console.Write(hr24.ToString("HH:mm"));
+        }
+    }
+}
