@@ -26,7 +26,7 @@ namespace SoloLearn
                 {
                     if (inputs[j] == letters[k])
                     {
-                        Console.Write(letters[(letters.Length-1)-k]);
+                        Console.Write($"{letters[(letters.Length-1)-k]}");
                     }
                 }
                 if (inputs[j] == ' ')
