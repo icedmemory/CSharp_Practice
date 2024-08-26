@@ -1,0 +1,48 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SoloLearn
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            char[] testNum = Console.ReadLine().ToCharArray();
+            Array.Reverse(testNum);
+
+            int[] tNToInt = new int[testNum.Length];
+            for (int i = 0; i < tNToInt.Length; i++)
+            {
+                tNToInt[i] = testNum[i]-'0';
+            }
+
+            for (int j = 1; j < tNToInt.Length; j+=2)
+            {
+                tNToInt[j]*=2;
+
+                if (tNToInt[j] > 9)
+                {
+                    tNToInt[j]-=9;
+                }
+            }
+
+            int intSum = 0;
+            for (int k = 0; k < tNToInt.Length; k++)
+            {
+                intSum+=tNToInt[k];
+            }
+
+            if (tNToInt.Length == 16 && intSum % 10 == 0)
+            {
+                Console.Write("valid");
+            }
+            else
+            {
+                Console.Write("not valid");
+            }
+        }
+    }
+}
