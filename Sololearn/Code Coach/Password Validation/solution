@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SoloLearn
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            char[] inputs = Console.ReadLine().ToCharArray();
+
+            int numbers = 0;
+            int symbols = 0;
+            char[] specialChars = {'!', '@', '#', '$', '%', '&', '*'};
+            foreach (char input in inputs)
+            {
+                if (char.IsDigit(input))
+                {
+                    numbers++;
+                }
+
+                foreach (char sC in specialChars)
+                {
+                    if (input == sC)
+                    {
+                        symbols++;
+                    }
+                }
+            }
+
+            if (inputs.Length >= 7 && numbers >= 2 && symbols >= 2)
+            {
+                Console.Write("Strong");
+            }
+            else
+            {
+                Console.Write("Weak");
+            }
+        }
+    }
+} 
