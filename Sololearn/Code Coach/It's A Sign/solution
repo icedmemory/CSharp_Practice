@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SoloLearn
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] signs = new string[4];
+            for (int i = 0; i < 4; i++)
+            {
+                signs[i] = Console.ReadLine();
+            }
+
+            int palindrome_count = 0;
+            foreach (string sign in signs)
+            {
+                char[] letters = sign.ToCharArray();
+                Array.Reverse(letters);
+
+                string reversedWord = new string(letters);
+                if (reversedWord == sign)
+                {
+                    palindrome_count++;
+                }
+            }
+
+            Console.Write((palindrome_count > 0) ? "Open" : "Trash");
+        }
+    }
+} 
