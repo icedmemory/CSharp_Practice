@@ -1,50 +1,66 @@
-﻿namespace Glenn_Lab_1
+﻿using System;
+
+namespace Glenn_Lab_2
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            int min = 0, max = 99;
-            
+            Console.WriteLine("Enter number of citizens: ");
+            int citizens = int.Parse(Console.ReadLine());
+
+            string row1 = "Id";
+            Console.Write("{0,10}   ", row1);
+
+            int[] id = new int[citizens];
+            for (int i = 0; i < citizens; i++)
+            {
+                id[i] = i;
+                Console.Write("{0,-4}", id[i]);
+            }
+
+            Console.WriteLine();
+
+            string row2 = "Contactee";
+            Console.Write("{0,10}   ", row2);
+
+            int[] contactee = new int[id.Length];
+            Array.Copy(id, contactee, id.Length);
             Random rnd = new Random();
-            int secretNumber = rnd.Next(100);
-            // Console.WriteLine(secretNumber + "\n"); [see what the secret number is]
-            
-            int input, numbersExceptSecretNumber;
+            for (int j = 0; j < contactee.Length; j++) 
+            {
+                int k = rnd.Next(j, contactee.Length);
+                int temp = contactee[j];
+                contactee[j] = contactee[k];
+                contactee[k] = temp;
+            }
+            // The Fisher-Yates Shuffle
+
+            foreach (int c in contactee)
+            {
+                Console.Write("{0,-4}", c);
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("----------");
+
+            Console.WriteLine("Enter id of infected citizen: ");
+            int infected = int.Parse(Console.ReadLine());
+            Console.WriteLine("These citizens are to be self-isolated in the following 14 days: ");
+            List<int> infected_chain = new List<int>();
+            infected_chain.Add(infected);
             do
             {
-                Console.WriteLine("({0}, {1})?", min, max);
-                input = int.Parse(Console.ReadLine());
-                if (input >= min && input <= max)
-                {
-                    if (input < secretNumber)
-                    {
-                        min = input + 1;
-                    }
-                    else if (input > secretNumber)
-                    {
-                        max = input - 1;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Bingo.");
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("Out of range. Try again?");
-                }
-                
-                numbersExceptSecretNumber = max - min;
-                /* Console.WriteLine(numbersExceptSecretNumber); [check how many numbers are left,
-                except the secret number] */
-                if (numbersExceptSecretNumber == 0)
-                {
-                    Console.WriteLine("Game over.");
-                    break;
-                }
+                if (infected == contactee[infected]) break;
+                infected_chain.Add(contactee[infected]);
+                infected = contactee[infected];
             }
-            while (input != secretNumber);
+            while (!(infected_chain.Contains(contactee[infected])));
+
+            foreach (int sick in infected_chain)
+            {
+                Console.Write("{0} ", sick);
+            }
         }
     }
 }
