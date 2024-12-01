@@ -10,36 +10,31 @@ namespace Glenn_Lab_4
         {
             Console.WriteLine("Enter player name: ");
             string playerName = Console.ReadLine();
+            Console.WriteLine();
             
             bool valid;
             do
             {
+                valid = true; 
+                // Assign the bool to "true" here, so that 1) it updates the value set at the end of the switch loop; 2) it needs no re-assignment in every true case. 
                 Console.WriteLine("Enter player type: (Human / Naive AI / Binary AI)");
                 string input = Console.ReadLine().ToLower();
                 Console.WriteLine();
                 switch (input)
                 {
                     case "human":
-                        HumanPlayer hp = new HumanPlayer(playerName);
-                        Game numGuess_Human = new Game(hp);
-                        numGuess_Human.Run();
-                        Console.WriteLine("It takes {0} {1} guesses to get the result.", playerName, numGuess_Human.GuessCount);
-                        valid = true;
+                        Player hp = new HumanPlayer(playerName);
+                        hp.RunGame(hp);
                         break;
                     case "naive ai":
-                        NaiveAI na = new NaiveAI(playerName);
-                        Game numGuess_Naive = new Game(na);
-                        numGuess_Naive.Run();
-                        Console.WriteLine("It takes {0} {1} guesses to get the result.", playerName, numGuess_Naive.GuessCount);
-                        valid = true;
+                        Player na = new NaiveAI(playerName);
+                        na.RunGame(na);
                         break;
                     case "binary ai":
-                        BinaryAI ba = new BinaryAI(playerName);
-                        Game numGuess_Binary = new Game(ba);
-                        numGuess_Binary.Run();
-                        Console.WriteLine("It takes {0} {1} guesses to get the result.", playerName, numGuess_Binary.GuessCount);
-                        valid = true;
+                        Player ba = new BinaryAI(playerName);
+                        ba.RunGame(ba);
                         break;
+                    // The cases exemplify polymorphism.
                     default:
                         valid = false;
                         break;
@@ -53,11 +48,24 @@ namespace Glenn_Lab_4
     {
         public string Name
         { get; set; }
+        
         public Player(string Name)
         {
             this.Name = Name;
         }
+        
         public abstract int RandomNumber(int minAfterGuess, int maxAfterGuess);
+        
+        public void RunGame(Player player)
+        {
+            Game Game = new Game(player);
+            Game.Run();
+            Console.WriteLine("It takes {0} {1} guesses to get the result.", Name, Game.GuessCount);
+        }
+        /* Abstract classes can have non-abstract methods.
+           To implement those methods, write the following code:
+           AbstractClass [polymorphism] / DerivedConcreteClass foo = new DerivedConcreteClass(optional parameters);
+           foo.Method(optional parameters); */
     }
 
     class HumanPlayer : Player
