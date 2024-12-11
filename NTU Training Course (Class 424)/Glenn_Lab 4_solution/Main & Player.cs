@@ -24,15 +24,15 @@ namespace Glenn_Lab_4
                 {
                     case "human":
                         Player hp = new HumanPlayer(playerName);
-                        hp.RunGame(hp);
+                        hp.PlayGame(hp);
                         break;
                     case "naive ai":
                         Player na = new NaiveAI(playerName);
-                        na.RunGame(na);
+                        na.PlayGame(na);
                         break;
                     case "binary ai":
                         Player ba = new BinaryAI(playerName);
-                        ba.RunGame(ba);
+                        ba.PlayGame(ba);
                         break;
                     // The cases exemplify polymorphism.
                     default:
@@ -56,11 +56,10 @@ namespace Glenn_Lab_4
         
         public abstract int RandomNumber(int minAfterGuess, int maxAfterGuess);
         
-        public void RunGame(Player player)
+        public void PlayGame(Player player)
         {
             Game Game = new Game(player);
             Game.Run();
-            Console.WriteLine("It takes {0} {1} guesses to get the result.", Name, Game.GuessCount);
         }
         /* Abstract classes can have non-abstract methods.
            To implement those methods, write the following code:
