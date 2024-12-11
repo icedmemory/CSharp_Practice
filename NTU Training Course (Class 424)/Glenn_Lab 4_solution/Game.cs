@@ -10,7 +10,6 @@ namespace Glenn_Lab_4
     internal class Game
     {
         private int min = 0, max = 99, secretNumber, guessCount = 0;
-        public int GuessCount { get { return guessCount; } }
         private Player player;
         public bool win;
 
@@ -63,6 +62,7 @@ namespace Glenn_Lab_4
             }
             while (!win);
             Console.WriteLine();
+            Console.WriteLine("It takes {0} {1} guesses to get the result.", player.Name, guessCount);
         }
     }
 }
