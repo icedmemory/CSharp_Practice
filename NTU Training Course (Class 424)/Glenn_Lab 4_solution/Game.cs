@@ -21,7 +21,7 @@ namespace Glenn_Lab_4
         public void Run()
         {
             Random rnd = new Random();
-            secretNumber = rnd.Next(min, max+1);
+            secretNumber = rnd.Next(min, max + 1);
             
             int number, numbersExceptSecretNumber;
 
