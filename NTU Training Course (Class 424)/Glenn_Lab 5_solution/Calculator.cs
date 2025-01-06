@@ -121,13 +121,13 @@ namespace SimpleCalculator
             string[] numInFormula = DisplayResult.Text.Split(operators, StringSplitOptions.None);
             double result = double.Parse(numInFormula[0]);
 
-            for (int i = 0; i < operators.Length; i++)
+            foreach (string op in operators)
             {
-                while (DisplayResult.Text.Contains(operators[i]))
+                while (DisplayResult.Text.Contains(op))
                 {
                     for (int j = 1; j < numInFormula.Length; j++)
                     {
-                        switch (operators[i])
+                        switch (op)
                         {
                             case " + ":
                                 result += double.Parse(numInFormula[j]);
@@ -145,7 +145,7 @@ namespace SimpleCalculator
                     }
 
                     DisplayResult.Text = result.ToString();
-                    if (DisplayResult.Text == "âˆž")
+                    if (DisplayResult.Text == "¡Û")
                     {
                         DisplayResult.Text = "E";
                     }
