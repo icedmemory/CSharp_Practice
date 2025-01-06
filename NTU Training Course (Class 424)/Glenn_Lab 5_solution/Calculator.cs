@@ -75,7 +75,6 @@ namespace SimpleCalculator
         private void Plus_Click(object sender, EventArgs e)
         {
             DisplayOperator(plus);
-
         }
 
         private void Minus_Click(object sender, EventArgs e)
