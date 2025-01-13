@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SoloLearn
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            char[] mapMarkers = Console.ReadLine().ToCharArray();
+
+            mapMarkers = mapMarkers.Where(val => val != ',').ToArray();
+
+            int startPoint = Array.IndexOf(mapMarkers, 'P');
+            Point(startPoint, out int sX, out int sY);
+            int endPoint = Array.LastIndexOf(mapMarkers, 'P');
+            Point(endPoint, out int eX, out int eY);
+
+            int distance = Math.Abs(eX-sX) + Math.Abs(eY-sY);
+            Console.Write(distance);
+        }
+
+        static void Point(int index, out int xAxis, out int yAxis)
+        {
+            xAxis = index / 5;
+            yAxis = index % 5;
+        }
+    }
+}
