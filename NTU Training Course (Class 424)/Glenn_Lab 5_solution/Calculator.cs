@@ -86,7 +86,7 @@ namespace SimpleCalculator
                     }
 
                     DisplayResult.Text = result.ToString();
-                    if (DisplayResult.Text == "¡Û")
+                    if (DisplayResult.Text == "âˆž")
                     {
                         DisplayResult.Text = "E";
                     }
