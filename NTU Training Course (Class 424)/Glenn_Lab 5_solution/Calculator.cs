@@ -7,54 +7,10 @@ namespace SimpleCalculator
             InitializeComponent();
         }
 
-        private void Zero_Click(object sender, EventArgs e)
+        private void Number_Click(object sender, EventArgs e)
         {
-            DisplayNumber(zero);
-        }
-
-        private void One_Click(object sender, EventArgs e)
-        {
-            DisplayNumber(one);
-        }
-
-        private void Two_Click(object sender, EventArgs e)
-        {
-            DisplayNumber(two);
-        }
-
-        private void Three_Click(object sender, EventArgs e)
-        {
-            DisplayNumber(three);
-        }
-
-        private void Four_Click(object sender, EventArgs e)
-        {
-            DisplayNumber(four);
-        }
-
-        private void Five_Click(object sender, EventArgs e)
-        {
-            DisplayNumber(five);
-        }
-
-        private void Six_Click(object sender, EventArgs e)
-        {
-            DisplayNumber(six);
-        }
-
-        private void Seven_Click(object sender, EventArgs e)
-        {
-            DisplayNumber(seven);
-        }
-
-        private void Eight_Click(object sender, EventArgs e)
-        {
-            DisplayNumber(eight);
-        }
-
-        private void Nine_Click(object sender, EventArgs e)
-        {
-            DisplayNumber(nine);
+            Button num = (Button)sender;
+            DisplayNumber(num);
         }
 
         private Dictionary<string, string> wordToNum = new Dictionary<string, string>
@@ -72,24 +28,10 @@ namespace SimpleCalculator
             }
         }
 
-        private void Plus_Click(object sender, EventArgs e)
+        private void Operator_Click(object sender, EventArgs e)
         {
-            DisplayOperator(plus);
-        }
-
-        private void Minus_Click(object sender, EventArgs e)
-        {
-            DisplayOperator(minus);
-        }
-
-        private void Multiply_Click(object sender, EventArgs e)
-        {
-            DisplayOperator(multiply);
-        }
-
-        private void Divide_Click(object sender, EventArgs e)
-        {
-            DisplayOperator(divide);
+            Button op = (Button)sender;
+            DisplayOperator(op);
         }
 
         private Dictionary<string, string> wordToOp = new Dictionary<string, string>
@@ -109,7 +51,7 @@ namespace SimpleCalculator
             }
         }
 
-        private void equal_Click(object sender, EventArgs e)
+        private void Equal_Click(object sender, EventArgs e)
         {
             DoComputation();
         }
@@ -144,7 +86,7 @@ namespace SimpleCalculator
                     }
 
                     DisplayResult.Text = result.ToString();
-                    if (DisplayResult.Text == "âˆž")
+                    if (DisplayResult.Text == "¡Û")
                     {
                         DisplayResult.Text = "E";
                     }
@@ -152,7 +94,7 @@ namespace SimpleCalculator
             }
         }
 
-        private void clear_Click(object sender, EventArgs e)
+        private void Clear_Click(object sender, EventArgs e)
         {
             DisplayResult.Text = null;
         }
