@@ -22,7 +22,7 @@ namespace SimpleCalculator
         {
             DisplayResult.Text += wordToNum[button.Name];
 
-            if (DisplayResult.Text.StartsWith('0'))
+            if (DisplayResult.Text.StartsWith('0') && DisplayResult.Text.Length == 2)
             {
                 DisplayResult.Text = wordToNum[button.Name];
             }
@@ -31,7 +31,15 @@ namespace SimpleCalculator
         private void Operator_Click(object sender, EventArgs e)
         {
             Button op = (Button)sender;
-            DisplayOperator(op);
+            
+            if (String.IsNullOrEmpty(DisplayResult.Text) && op.Name == "minus")
+            {
+                DisplayResult.Text = wordToOp[op.Name].Trim();
+            }
+            else 
+            {
+                DisplayOperator(op);
+            }
         }
 
         private Dictionary<string, string> wordToOp = new Dictionary<string, string>
@@ -43,7 +51,14 @@ namespace SimpleCalculator
         {
             if (DisplayResult.Text.EndsWith(' '))
             {
-                DisplayResult.Text = DisplayResult.Text.Substring(0, DisplayResult.Text.LastIndexOf(' ') - 2) + wordToOp[button.Name];
+                if (DisplayResult.Text.Length > 3)
+                {
+                    DisplayResult.Text = DisplayResult.Text.Substring(0, DisplayResult.Text.LastIndexOf(' ') - 2) + wordToOp[button.Name];
+                }
+                else
+                {
+                    DisplayResult.Text = null;
+                }
             }
             else
             {
@@ -59,8 +74,13 @@ namespace SimpleCalculator
         public void DoComputation()
         {
             string[] operators = wordToOp.Values.ToArray();
-            string[] numInFormula = DisplayResult.Text.Split(operators, StringSplitOptions.None);
+            string[] numInFormula = DisplayResult.Text.Split(operators, StringSplitOptions.RemoveEmptyEntries);
+            
             double result = double.Parse(numInFormula[0]);
+            if (DisplayResult.Text.StartsWith(" - "))
+            {
+                result = -result;
+            }
 
             foreach (string op in operators)
             {
@@ -86,7 +106,7 @@ namespace SimpleCalculator
                     }
 
                     DisplayResult.Text = result.ToString();
-                    if (DisplayResult.Text == "âˆž")
+                    if (DisplayResult.Text == "¡Û")
                     {
                         DisplayResult.Text = "E";
                     }
